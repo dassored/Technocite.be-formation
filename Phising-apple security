@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Votre titre d'email ici</title>
+    <style>
+      /* Reset des styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* Style pour le fond de l'email */
+      body {
+        background-color: #f1f1f1;
+      }
+      /* Centrage du contenu de l'email */
+      .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+      }
+      /* Style pour le titre de l'email */
+      h1 {
+        color: #333333;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      /* Style pour le texte de l'email */
+      p {
+        color: #666666;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+      /* Style pour le bouton de connexion */
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #1877f2;
+        color: #ffffff;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .button:hover {
+        background-color: #166fe5;
+      }
+      /* Style pour l'image */
+      .image {
+        display: block;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Urgent : alerte security !</h1>
+      <img src="https://appleworld.today/wp-content/uploads/2021/08/Apple-Security.jpg" alt="Image de votre email" class="image">
+      <p>
+
+
+        
+Apple Security Departement</h1>
+    <h2>Vérification de la vulnérabilité Facetime</h2>
+    <p>Une vulnérabilité a été identifiée dans les applications mobiles Apple Facetime qui permettent à un attaquant d'enregistrer des appels et des vidéos depuis votre appareil mobile à votre insu.</p>
+    <p>Nous avons créé un site Web permettant à tous les citoyens de vérifier si leurs vidéos et leurs appels ont été rendus publics.</p>
+    <p>Pour effectuer la vérification, veuillez utiliser le lien suivant :</p>
+    <a href="https://www.apple.com/verification-facetime">Vérification Facetime</a>
+    <p>Ce site Web sera disponible pendant 72 heures.</p>
+
+
+</p>
+
+
+    </div>
+  </body>
+</html>
