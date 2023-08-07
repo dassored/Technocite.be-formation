@@ -1,1 +1,1 @@
-# technocite.be-formations-analyste-en-cybersecurite
+# technocite.be-formation
