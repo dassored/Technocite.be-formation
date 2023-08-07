@@ -1,0 +1,20 @@
+#Matrix-scanner-Port-ip
+
+import socket
+
+ip = input("L'analyse de réseau peut révéler des informations sensibles sur les systèmes et les dispositifs connectés, et toute action non autorisée peut entraîner des poursuites judiciaires contre vous ! Entrez une adresse IP::")
+
+port_list = [21, 22, 23, 25, 53, 80, 110, 135, 139, 443, 445, 1433, 1521, 3306, 3389, 5432, 5900, 8080]  # Liste de ports à tester
+
+# adresse ip imprimante  : 192.168.129.15
+for port in port_list:
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock .settimeout(1) # Durée maximale d'attente pour une connexion (en secondes)
+    result = sock.connect_ex ((ip, port))
+    if result == 0:
+        print ("Le port {} est ouvert attention vulnérables aux attaques de hackers." . format (port))
+    else:
+        print ("le port {} est fermé ,vous êtes en sécurité".format (port))
+        
+    sock.close()
+    
