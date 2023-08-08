@@ -1,0 +1,50 @@
+import random
+import string
+import tkinter as tk
+from tkinter import ttk
+
+def generate_password(length, characters):
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
+
+def generate_and_display_password():
+    choice = password_choice.get()
+    length = password_length.get()
+    characters = ""
+
+    if choice == 1:
+        characters = string.ascii_letters + string.digits
+    elif choice == 2:
+        characters = string.ascii_letters + string.digits + '#@:'
+    elif choice == 3:
+        characters = string.ascii_letters + string.digits + '#@:'
+
+    password = generate_password(length, characters)
+    password_display.set(password)
+
+app = tk.Tk()
+app.title("Générateur de mots de passe")
+
+password_choice = tk.IntVar()
+password_length = tk.IntVar()
+password_display = tk.StringVar()
+
+frame = ttk.Frame(app)
+frame.grid(column=0, row=0, padx=10, pady=10)
+
+ttk.Label(frame, text="Choisissez le type de mot de passe :").grid(column=0, row=0, sticky="w")
+ttk.Radiobutton(frame, text="Mot de passe court (10 caractères)", variable=password_choice, value=1).grid(column=0, row=1, sticky="w")
+ttk.Radiobutton(frame, text="Mot de passe moyen (12 caractères + #@:)", variable=password_choice, value=2).grid(column=0, row=2, sticky="w")
+ttk.Radiobutton(frame, text="Mot de passe fort (+15 caractères + #@:)", variable=password_choice, value=3).grid(column=0, row=3, sticky="w")
+
+ttk.Label(frame, text="Longueur du mot de passe :").grid(column=0, row=4, sticky="w")
+password_length_entry = ttk.Entry(frame, textvariable=password_length)
+password_length_entry.grid(column=0, row=5, pady=(0, 10))
+
+generate_button = ttk.Button(frame, text="Générer mot de passe", command=generate_and_display_password)
+generate_button.grid(column=0, row=6)
+
+password_display_label = ttk.Label(frame, textvariable=password_display)
+password_display_label.grid(column=0, row=7, pady=(10, 0))
+
+app.mainloop()
