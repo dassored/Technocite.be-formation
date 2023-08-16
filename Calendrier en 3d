@@ -1,0 +1,88 @@
+import tkinter as tk
+from tkinter import ttk
+import calendar
+
+def save_event():
+    date = selected_date
+    event = event_entry.get()
+    events_list.insert("", "end", values=(date, event))
+    event_entry.delete(0, "end")
+
+def update_calendar():
+    year = int(year_var.get())
+    month = int(month_var.get())
+    cal_content = calendar.monthcalendar(year, month)
+    
+    for i in range(len(cal_content)):
+        for j in range(len(cal_content[i])):
+            day = cal_content[i][j]
+            if day != 0:
+                cal_buttons[i][j].config(text=str(day))
+                cal_buttons[i][j].config(state="normal")
+            else:
+                cal_buttons[i][j].config(text="")
+                cal_buttons[i][j].config(state="disabled")
+
+def on_day_selected(event):
+    day = event.widget.cget("text")
+    if day:
+        global selected_date
+        selected_date = f"{year_var.get()}-{month_var.get():02d}-{int(day):02d}"
+        date_label.config(text=f"Sélectionné : {selected_date}")
+
+# Création de la fenêtre principale
+root = tk.Tk()
+root.title("Calendrier de YouTuber")
+root.geometry("600x500")
+
+# Création de l'entrée d'événement
+event_label = tk.Label(root, text="Événement:")
+event_label.pack()
+event_entry = tk.Entry(root)
+event_entry.pack()
+
+# Création du calendrier
+year_var = tk.StringVar()
+year_label = tk.Label(root, text="Année:")
+year_label.pack()
+year_entry = tk.Entry(root, textvariable=year_var)
+year_entry.pack()
+
+month_var = tk.StringVar()
+month_label = tk.Label(root, text="Mois:")
+month_label.pack()
+month_entry = tk.Entry(root, textvariable=month_var)
+month_entry.pack()
+
+update_button = tk.Button(root, text="Mettre à jour", command=update_calendar)
+update_button.pack()
+
+cal_frame = tk.Frame(root)
+cal_frame.pack()
+
+cal_buttons = []
+for i in range(6):
+    row = []
+    for j in range(7):
+        button = tk.Button(cal_frame, text="", state="disabled")
+        button.grid(row=i, column=j, padx=5, pady=5)
+        button.bind("<Button-1>", on_day_selected)
+        row.append(button)
+    cal_buttons.append(row)
+
+# Création du bouton "Enregistrer"
+save_button = tk.Button(root, text="Enregistrer", command=save_event)
+save_button.pack()
+
+# Label pour afficher la date sélectionnée
+selected_date = ""
+date_label = tk.Label(root, text="")
+date_label.pack()
+
+# Création du tableau d'événements
+events_list = ttk.Treeview(root, columns=("Date", "Événement"), show="headings")
+events_list.heading("Date", text="Date")
+events_list.heading("Événement", text="Événement")
+events_list.pack(pady=20)
+
+root.mainloop()
