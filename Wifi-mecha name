@@ -1,0 +1,28 @@
+import random
+
+# Liste de noms de base
+base_names = [
+    "ARX-014", "MSN-001A1", "RGM-89De", "MSA-005K", "RAG-79", 
+    "RX-160S", "MSG000", "MSF-skriker", "RX-78-2", "RX-78-S",
+    "FD-03", "tallgueese-F89"
+]
+
+# Liste d'adjectifs pour personnaliser les noms
+adjectives = [
+    "Cosmic", "Galactic", "Epic", "Ultimate", "Awesome", 
+    "Infernal", "Mighty", "Mecha", "Star", "Thunder"
+]
+
+# Nombre de noms de réseau à générer
+num_networks = 10
+
+# Générer et afficher les noms de réseau WiFi
+for _ in range(num_networks):
+    adjective = random.choice(adjectives)
+    base_name = random.choice(base_names)
+    
+    # Supprimer les tirets et numéros pour simplifier
+    simplified_base_name = "".join(filter(str.isalpha, base_name))
+    
+    wifi_name = f"{adjective}_{simplified_base_name}"
+    print(wifi_name)
