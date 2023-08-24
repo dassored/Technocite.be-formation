@@ -1,0 +1,31 @@
+import feedparser
+
+#Fonction pour afficher les titres et liens des articles d'un flux RSS
+def afficher_flux_rss(url, nombre_articles=5):
+    feed = feedparser.parse(url)
+
+    print(f"Flux RSS: {feed.feed.title}\n")
+    for i , entry in enumerate(feed.entries[:nombre_articles], start=1):
+        print(f"{i}. {entry.title}")
+        print(f" Lien:  {entry.link}")
+        print()
+
+def main():
+    print("Sélectionnez un site pour afficher les derniers articles:")
+    print("1. Journal du Geek")
+    print("2. Clubic")
+    print("3. Le Soir")
+
+    choix = input("Votre choix (1/2/3): ")
+
+    if choix == "1":
+        afficher_flux_rss("https://www.journaldugeek.com/feed/")
+    elif choix == "2":
+        afficher_flux_rss ("https://www.clubic.com/feed/news.rss")
+    elif choix == "3":
+        afficher_flux_rss("https://www.lesoir.be/rss/section/4")
+    else:
+        print("Choix invalide!")
+
+if __name__ == "__main__":
+    main()
