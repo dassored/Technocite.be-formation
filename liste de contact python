@@ -1,0 +1,62 @@
+import sqlite3
+import datetime
+
+# Connexion à la base de données
+cursor.execute('''CREATE TABLE IF NOT EXISTS contacts (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nom TEXT,
+                    prenom TEXT,
+                    telephone TEXT,
+                    anniversaire DATE
+                )''')
+conn.commit()
+
+def ajouter_contact():
+    nom = input("Nom: ")
+    prenom = input("Prénom: ")
+    telephone = input("Téléphone: ")
+    anniversaire = input("Date d'anniversaire (YYYY-MM-DD): ")
+    cursor.execute('''INSERT INTO contacts (nom, prenom, telephone, anniversaire)
+                      VALUES (?, ?, ?, ?)''', (nom, prenom, telephone, anniversaire)) 
+    conn.commit()
+    print("Contact ajouté avec succès!")  
+
+def afficher_contacts():
+        cursor.execute("SELECT * FROM contacts")
+        contact =cursor.fetchall()
+        for contact in contact:
+            print(contact)
+
+def rappel_anniversaires():
+        today = datetime.date.today()
+        cursor.execute("SELECT * FROM contacts WHERE strftime('%m-%d', anniversaire) = ?", (today.strftime('%m-%d'),))
+        anniversaire = cursor.fetchall
+        if anniversaire:
+            print("Rappel: C'est l'anniversaire de:")
+            for contact in anniversaire:
+                print(contact[1], contact[2])
+
+def main():
+    while True:
+        print("\nMenu:")
+        print("1. Ajouter un contact")
+        print("2. Afficher les contacts")
+        print("3. Rappel d'anniversaires")
+        print("4. Quitter") 
+
+        choix = input(" votre choix ")
+        if choix == "1":
+            ajouter_contact()
+        elif choix == "2":
+            afficher_contacts()
+        elif choix == "3":
+            rappel_anniversaires()
+        elif choix == "4":
+            break
+        else:
+            print("choix invalide!")
+
+        conn.close()
+    if __name__ == "__main__":
+        main()
+        
